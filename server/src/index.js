@@ -12,8 +12,11 @@ app.use(cors());
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 mongoose.connect(
-  "mongodb+srv://user123:Password123Tech@test.m6cb1nv.mongodb.net/recipetest?retryWrites=true&w=majority",
+  "mongodb+srv://muyuanyang2003:${process.env.PASSWORD_DB}@recipes.lqctvn4.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
